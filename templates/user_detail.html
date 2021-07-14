@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% extends "basic.html" %}
+
+{% block Hashapp %}
+
+<style>
+    body{
+    margin-left: 40px;
+    }
+    h1{
+    margin-left: 20px;
+    color:#e6b997;
+    }
+
+
+    ol{
+     margin-left: 20px;
+      font-size: 25px;
+    }
+
+</style>
+<body>
+<div class="container">
+    <div class="jumbotron">
+<h1>
+    Here are your users:</h1>
+    {% if users or details %}
+    <ol>
+        {% for u in users %}
+        <li>User Info:</li>
+        <ul>
+            <li>First Name: {{u.first_name}}</li>
+            <li>Last Name: {{u.last_name}}</li>
+            <li>Email: {{u.email}}</li>
+        </ul>
+        {% endfor %}
+
+    </ol>
+    {% else %}
+    <h3>Nothing to show... Load again!</h3>
+    {% endif %}
+</div>
+</div>
+</body>
+{% endblock %}
